@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-const maskUserData = ref(false);
+const maskUserData = ref(true);
 const props = defineProps({
   store: {
     type: Object,
