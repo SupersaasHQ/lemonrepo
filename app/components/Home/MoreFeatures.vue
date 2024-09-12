@@ -1,4 +1,5 @@
 <template>
+  <div class="fixed bottom-2 right-2 z-50 bg-white p-2 border text-xs">{{ smallerThanLg }}</div>
   <div class="max-w-5xl mx-auto">
     <h2
       class="text-4xl text-slate-900 font-extrabold font-display text-center mb-4 my-24 lg:my-4 px-4 lg:px-0"
@@ -25,6 +26,7 @@
       </div>
     </Vue3Marquee>
   </div>
+
   <div
     class="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 px-4 lg:px-0"
     ref="target"
@@ -141,5 +143,20 @@ const getExperienceClasses = computed(() => (experience) => [
 .springy-transition {
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.75);
   transform: translate(0) rotate(0) !important;
+}
+.marquee-container {
+  --mask: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0) 5%,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 95%,
+      rgba(0, 0, 0, 0) 0
+    )
+    100% 50% / 100% 100%;
+
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 </style>
