@@ -1,0 +1,41 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@lemonsqueezy/lemonsqueezy.js": "^3.3.1",
+    "@nuxt/eslint": "^0.5.7",
+    "@nuxt/fonts": "^0.8.0",
+    "@nuxt/scripts": "^0.8.5",
+    "@nuxt/ui": "^2.18.4",
+    "@nuxthub/core": "^0.7.12",
+    "@octokit/rest": "^21.0.2",
+    "apexcharts": "^3.53.0",
+    "canvas-confetti": "^1.9.3",
+    "date-fns": "^3.6.0",
+    "nuxt": "^3.13.1",
+    "nuxt-auth-utils": "^0.3.8",
+    "vue": "^3.5.4",
+    "vue-router": "^4.4.4",
+    "vue-sonner": "^1.1.5",
+    "vue3-apexcharts": "^1.6.0",
+    "vue3-marquee": "^4.2.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.5.7",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
+    "eslint": "^9.10.0",
+    "vue-tsc": "^2.1.6",
+    "wrangler": "^3.76.0"
+  }
+}
