@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center gap-3 mb-12">
+  <div class="flex items-center justify-center gap-2 sm:gap-3 mb-12">
     <IconCard
       v-for="item in items"
       :key="item.label"

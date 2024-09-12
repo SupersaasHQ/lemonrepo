@@ -1,5 +1,4 @@
 <template>
-  <div class="fixed bottom-2 right-2 z-50 bg-white p-2 border text-xs">{{ smallerThanLg }}</div>
   <div class="max-w-5xl mx-auto">
     <h2
       class="text-4xl text-slate-900 font-extrabold font-display text-center mb-4 my-24 lg:my-4 px-4 lg:px-0"
@@ -131,11 +130,8 @@ const items = [
 const getExperienceClasses = computed(() => (experience) => [
   experience.color,
   !smallerThanLg.value && !targetIsVisible.value
-    ? experience.initialPosition
-    : null,
-  !smallerThanLg.value && !targetIsVisible.value
-    ? experience.initialRotate
-    : null,
+    ? [experience.initialPosition, experience.initialRotate]
+    : [],
 ]);
 </script>
 
