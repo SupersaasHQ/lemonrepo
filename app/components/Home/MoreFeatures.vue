@@ -33,12 +33,7 @@
       v-for="experience in experiences"
       :key="experience.title"
       class="rounded-2xl p-8 flex flex-col border-4 border-white metal-shadow transition-all duration-500"
-      :class="[
-        experience.color,
-        targetIsVisible && !smallerThanLg ? 'springy-transition' : null,
-        !smallerThanLg && !targetIsVisible ? experience.initialPosition : null,
-        !smallerThanLg && !targetIsVisible ? experience.initialRotate : null,
-      ]"
+      :class="getExperienceClasses(experience)"
     >
       <h3
         class="text-white text-4xl font-bold tracking-tight font-display mb-8"
@@ -58,7 +53,6 @@ import {
 } from "@vueuse/core";
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
-
 const smallerThanLg = breakpoints.smaller("lg");
 
 const target = ref(null);
@@ -131,6 +125,16 @@ const items = [
   "Hashing Utils compatiable with Edge Functions",
   "Filters and Text search examples",
 ];
+
+const getExperienceClasses = computed(() => (experience) => [
+  experience.color,
+  !smallerThanLg.value && !targetIsVisible.value
+    ? experience.initialPosition
+    : null,
+  !smallerThanLg.value && !targetIsVisible.value
+    ? experience.initialRotate
+    : null,
+]);
 </script>
 
 <style scoped>
