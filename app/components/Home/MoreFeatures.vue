@@ -47,14 +47,7 @@
 </template>
 
 <script setup>
-import {
-  useElementVisibility,
-  breakpointsTailwind,
-  useBreakpoints,
-} from "@vueuse/core";
-
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const smallerThanLg = breakpoints.smaller("lg");
+import { useElementVisibility } from "@vueuse/core";
 
 const target = ref(null);
 const targetIsVisible = useElementVisibility(target, {
@@ -67,32 +60,32 @@ const experiences = [
     description:
       "Our codebase is always current and up-to-date. I personally ensure that every piece of code is reviewed before it's published.",
     color: "bg-rose-500",
-    initialPosition: "translate-x-[80px]",
-    initialRotate: "rotate-2",
+    initialPosition: "translate-x-0 lg:translate-x-[80px]",
+    initialRotate: "rotate-0 lg:rotate-2",
   },
   {
     title: "Best Practices",
     description:
       "I adhere to best practices and standards to guarantee that the codebase remains maintainable and scalable.",
     color: "bg-emerald-500",
-    initialPosition: "translate-x-[40px]",
-    initialRotate: "-rotate-2",
+    initialPosition: "translate-x-0 lg:translate-x-[40px]",
+    initialRotate: "rotate-0 lg:-rotate-2",
   },
   {
     title: "Well Documented",
     description:
       "Thoroughly documented with videos explaining features, making it easy for developers to understand.",
     color: "bg-cyan-500",
-    initialPosition: "translate-x-[-40px]",
-    initialRotate: "rotate-2",
+    initialPosition: "translate-x-0 lg:translate-x-[-40px]",
+    initialRotate: "rotate-0 lg:rotate-2",
   },
   {
     title: "Easy to Customize",
     description:
       "Supersaas offers easy customization with sensible abstractions, enabling developers to tailor it to their specific needs.",
     color: "bg-indigo-500",
-    initialPosition: "translate-x-[-80px]",
-    initialRotate: "-rotate-2",
+    initialPosition: "translate-x-0 lg:translate-x-[-80px]",
+    initialRotate: "rotate-0 lg:-rotate-2",
   },
 ];
 const items = [
@@ -129,9 +122,9 @@ const items = [
 
 const getExperienceClasses = computed(() => (experience) => [
   experience.color,
-  !smallerThanLg.value && !targetIsVisible.value
+  !targetIsVisible.value
     ? [experience.initialPosition, experience.initialRotate]
-    : [],
+    : null,
 ]);
 </script>
 
