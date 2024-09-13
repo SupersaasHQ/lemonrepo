@@ -75,7 +75,7 @@
           >Demo</UButton
         >
         <UButton
-          to="/docs"
+          to="/#docs"
           @click="toggleMobileMenu"
           variant="ghost"
           color="gray"

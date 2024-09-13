@@ -34,7 +34,10 @@
         <div class="p-1">
           <div class="flex items-center gap-2">
             <Icon name="i-ph-sparkle-duotone" class="h-5 w-6" />
-            <p class="text-gray-800">$100 off for the first 100 Customers</p>
+            <p class="text-gray-800">
+              <span class="font-semibold">$100 off</span> for the first 100
+              Customers
+            </p>
           </div>
           <div class="flex items-center gap-2 mt-2">
             <UProgress

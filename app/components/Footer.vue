@@ -5,7 +5,10 @@
       <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-12">
           <div>
-            <Logo class="h-7 w-auto text-white" />
+            <div class="flex items-center gap-2 text-white">
+              <Logo class="h-7 w-auto" />
+              <p>Supersaas</p>
+            </div>
             <p class="text-white text-sm mt-4">
               The No Nonsense AI SaaS Starter Kit.
             </p>
