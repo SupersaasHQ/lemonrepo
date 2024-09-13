@@ -6,24 +6,30 @@
       Are you convinced yet?
       <span class="md:block">Need more features?</span>
     </h2>
-    <Vue3Marquee :duration="180" class="marquee-container">
-      <div
-        v-for="item in items"
-        :key="item"
-        class="flex-shrink-0 metal-shadow bg-white rounded-lg px-3 py-2 mx-2 my-2 text-gray-600 font-medium"
+    <ClientOnly>
+      <Vue3Marquee :duration="180" class="marquee-container">
+        <div
+          v-for="item in items"
+          :key="item"
+          class="flex-shrink-0 metal-shadow bg-white rounded-lg px-3 py-2 mx-2 my-2 text-gray-600 font-medium"
+        >
+          {{ item }}
+        </div>
+      </Vue3Marquee>
+      <Vue3Marquee
+        :duration="180"
+        direction="reverse"
+        class="marquee-container"
       >
-        {{ item }}
-      </div>
-    </Vue3Marquee>
-    <Vue3Marquee :duration="180" direction="reverse" class="marquee-container">
-      <div
-        v-for="item in items"
-        :key="item"
-        class="flex-shrink-0 metal-shadow bg-white rounded-lg px-3 py-2 mx-2 my-2 text-gray-600 font-medium"
-      >
-        {{ item }}
-      </div>
-    </Vue3Marquee>
+        <div
+          v-for="item in items"
+          :key="item"
+          class="flex-shrink-0 metal-shadow bg-white rounded-lg px-3 py-2 mx-2 my-2 text-gray-600 font-medium"
+        >
+          {{ item }}
+        </div>
+      </Vue3Marquee>
+    </ClientOnly>
   </div>
 
   <div
@@ -33,15 +39,13 @@
     <div
       v-for="experience in experiences"
       :key="experience.title"
-      class="rounded-2xl p-8 flex flex-col border-4 border-white metal-shadow transition-all duration-500"
+      class="rounded-2xl p-8 flex flex-col border-4 border-white metal-shadow text-white"
       :class="getExperienceClasses(experience)"
     >
-      <h3
-        class="text-white text-4xl font-bold tracking-tight font-display mb-8"
-      >
+      <h3 class="text-4xl font-bold tracking-tight font-display mb-8">
         {{ experience.title }}
       </h3>
-      <p class="mt-auto text-white text-lg">{{ experience.description }}</p>
+      <p class="mt-auto text-lg">{{ experience.description }}</p>
     </div>
   </div>
 </template>
@@ -125,14 +129,11 @@ const getExperienceClasses = computed(() => (experience) => [
   !targetIsVisible.value
     ? [experience.initialPosition, experience.initialRotate]
     : null,
+  "transition-all duration-500 ease-spring",
 ]);
 </script>
 
 <style scoped>
-.springy-transition {
-  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.75);
-  transform: translate(0) rotate(0) !important;
-}
 .marquee-container {
   --mask: linear-gradient(
       to right,
@@ -147,5 +148,9 @@ const getExperienceClasses = computed(() => (experience) => [
 
   -webkit-mask: var(--mask);
   mask: var(--mask);
+}
+
+.ease-spring {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.75);
 }
 </style>
