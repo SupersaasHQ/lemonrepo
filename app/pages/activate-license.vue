@@ -7,8 +7,8 @@
         Activate License
       </h1>
       <p class="max-w-xl text-gray-600 text-xl">
-        You need to activate your license to use Supersaas Essentials. Please
-        enter the github username you want to activate the license for.
+        You need to activate your license to use Lemonrepo. Please enter the
+        github username you want to activate the license for.
       </p>
       <UForm
         class="space-y-6"
@@ -32,14 +32,6 @@
           block
         />
       </UForm>
-      <div class="text-center">
-        <p>
-          Don't have a license yet?
-          <ScriptLemonSqueezy>
-            <UButton :to="lemonSqueezyUrl" label="Buy now" color="gray" />
-          </ScriptLemonSqueezy>
-        </p>
-      </div>
     </UContainer>
     <UModal v-model="licenseActivated" title="License Activated">
       <div class="px-8 pb-16 sm:pb-12 f-center flex-col text-center">

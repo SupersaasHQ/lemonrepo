@@ -7,7 +7,7 @@
           <div>
             <div class="flex items-center gap-2 text-white">
               <Logo class="h-7 w-auto" />
-              <p>Supersaas</p>
+              <p>Lemonrepo</p>
             </div>
             <p class="text-white text-sm mt-4">
               The No Nonsense AI SaaS Starter Kit.

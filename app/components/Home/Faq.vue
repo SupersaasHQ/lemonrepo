@@ -51,12 +51,12 @@ const items = [
   {
     label: "Javascript or Typescript?",
     content:
-      "Supersaas is made with Javascript, but some utilities are written in Typescript.",
+      "Lemonrepo is made with Javascript, but some utilities are written in Typescript.",
   },
   {
     label: "What's the tech stack?",
     content:
-      "Supersaas is made with Nuxt 3 the fullstack framework, Tailwind CSS for CSS, Nuxt Auth Utils for authentication, Drizzle ORM for database, AWS S3, Nuxthub Blob and Local Storage for file storage, Stripe and Lemonsqueezy for payments, Resend, Sendgrid, Postmark, Plunk for emails, and more.",
+      "Lemonrepo is made with Nuxt 3 the fullstack framework, Tailwind CSS for CSS, Nuxt Auth Utils for authentication, Drizzle ORM for database, AWS S3, Nuxthub Blob and Local Storage for file storage, Stripe and Lemonsqueezy for payments, Resend, Sendgrid, Postmark, Plunk for emails, and more.",
   },
   {
     label: "What happens after I purchase a template?",
@@ -72,19 +72,19 @@ const items = [
     label:
       "I did not like the product, and I haven't used it. Can I get a refund?",
     content:
-      "I strongly reccomend reaching out to me in case you have doubts about Supersaas, I will gladly give you an entire tour of the procuct and how to use it. I can also help you with any questions you have. This way you can decide if you want to purchase the product or not.",
+      "I strongly reccomend reaching out to me in case you have doubts about Lemonrepo, I will gladly give you an entire tour of the procuct and how to use it. I can also help you with any questions you have. This way you can decide if you want to purchase the product or not.",
   },
   {
-    label: "Can I use Supersaas for open source projects?",
+    label: "Can I use Lemonrepo for open source projects?",
     content: "No, this will break the license, I hope you understand.",
   },
   {
-    label: "Can I use Supersaas for client projects?",
+    label: "Can I use Lemonrepo for client projects?",
     content: "Yes you can, use it for as many projects as you like.",
   },
   {
-    label: "Can I use Supersaas for commercial projects?",
-    content: "Yes you can, Supersaas was made for this very purpose.",
+    label: "Can I use Lemonrepo for commercial projects?",
+    content: "Yes you can, Lemonrepo was made for this very purpose.",
   },
   {
     label: "Can I resell this product?",

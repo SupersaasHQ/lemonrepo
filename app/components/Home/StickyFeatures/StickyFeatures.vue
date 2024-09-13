@@ -9,7 +9,7 @@
       <h2
         class="mx-auto max-w-xl text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 font-display"
       >
-        Supersaas has everything you need to build a SaaS
+        Lemonrepo has everything you need to build a SaaS
       </h2>
       <p class="mx-auto mt-4 max-w-xl text-gray-600 text-2xl">
         Made to launch without the headache.

@@ -86,7 +86,7 @@ const experiences = [
   {
     title: "Easy to Customize",
     description:
-      "Supersaas offers easy customization with sensible abstractions, enabling developers to tailor it to their specific needs.",
+      "Lemonrepo offers easy customization with sensible abstractions, enabling developers to tailor it to their specific needs.",
     color: "bg-indigo-500",
     initialPosition: "translate-x-0 lg:translate-x-[-80px]",
     initialRotate: "rotate-0 lg:-rotate-2",

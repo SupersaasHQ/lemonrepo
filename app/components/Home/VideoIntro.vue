@@ -5,10 +5,10 @@
         <h2
           class="mx-auto max-w-xl text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 font-display"
         >
-          How Supersaas works?
+          How Lemonrepo works?
         </h2>
         <p class="mx-auto mt-4 max-w-xl text-gray-600 text-2xl">
-          Get started with Supersaas in just 3 minutes.
+          Get started with Lemonrepo in just 3 minutes.
         </p>
       </div>
       <div class="relative">
