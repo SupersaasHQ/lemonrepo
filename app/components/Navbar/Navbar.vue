@@ -5,8 +5,8 @@
     >
       <div class="flex items-center gap-5">
         <NuxtLink to="/" class="flex items-center gap-2">
-          <Logo class="h-8 w-auto" role="img" alt="Lemonrepo logo" />
-          <p class="font-bold tracking-tight">Lemonrepo</p>
+          <Logo class="h-8 w-auto" role="img" alt="Supersaas logo" />
+          <p class="font-bold tracking-tight">Supersaas</p>
         </NuxtLink>
         <NavbarWhatsNew />
       </div>

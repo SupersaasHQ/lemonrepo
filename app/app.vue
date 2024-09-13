@@ -10,8 +10,8 @@
 <script setup>
 import { Toaster } from "vue-sonner";
 useSeoMeta({
-  title: "Lemonrepo - Sell access to private Github repositories",
-  description: "Sell templates, codebases, websites, and more with Lemonrepo.",
+  title: "Supersaas - Sell access to private Github repositories",
+  description: "Sell templates, codebases, websites, and more with Supersaas.",
   ogImage: "https://supersaas.dev/og-image.png",
 });
 </script>
