@@ -37,7 +37,12 @@
             <p class="text-gray-800">$100 off for the first 100 Customers</p>
           </div>
           <div class="flex items-center gap-2 mt-2">
-            <UProgress :value="count" size="md" class="flex-1" />
+            <UProgress
+              :value="count"
+              size="md"
+              class="flex-1"
+              aria-label="Progress of the offer"
+            />
             <span class="text-xs text-gray-500">{{ count }}/100 used</span>
           </div>
         </div>

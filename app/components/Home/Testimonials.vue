@@ -35,6 +35,7 @@
                 :src="testimonial.author.avatar.src"
                 :alt="testimonial.author.name"
                 size="md"
+                loading="lazy"
               />
               <div>
                 <p class="text-gray-600 font-medium">

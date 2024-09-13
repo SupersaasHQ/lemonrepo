@@ -16,10 +16,11 @@
           name="i-logos-youtube-icon"
           class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-12 h-12 drop-shadow"
         />
-        <img
+        <NuxtImg
           src="https://i.ytimg.com/vi/MFAmnD5InIo/maxresdefault.jpg"
           alt="Supersaas Video Intro"
-          class="w-full h-auto max-w-3xl mx-auto mt-8 rounded-xl overflow-hidden cursor-pointer"
+          class="max-w-3xl mx-auto mt-8 rounded-xl overflow-hidden cursor-pointer metal-shadow"
+          sizes="sm:50vw md:400px"
           @click="isOpen = true"
         />
       </div>

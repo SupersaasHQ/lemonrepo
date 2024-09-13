@@ -8,7 +8,12 @@
       class="w-96 mx-auto overflow-hidden"
     >
       <div class="flex items-center justify-center gap-2 px-5">
-        <UAvatar :src="item.avatar" alt="Joseph Salim" size="xs" />
+        <UAvatar
+          :src="item.avatar"
+          alt="Joseph Salim"
+          size="xs"
+          loading="lazy"
+        />
         <p class="text-sm text-gray-500">{{ item.text }}</p>
       </div>
     </UCarousel>

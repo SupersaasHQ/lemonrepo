@@ -8,7 +8,15 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxt/fonts",
     "nuxt-auth-utils",
+    "@nuxt/image",
   ],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+    },
+  },
   hub: {
     kv: true,
   },
