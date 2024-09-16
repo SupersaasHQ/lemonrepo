@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "nuxt-auth-utils",
     "@nuxt/image",
+    "@nuxt/icon",
   ],
   app: {
     head: {
