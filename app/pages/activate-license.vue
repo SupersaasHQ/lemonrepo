@@ -33,34 +33,67 @@
         />
       </UForm>
     </UContainer>
-    <UModal v-model="licenseActivated" title="License Activated">
-      <div class="px-8 pb-16 sm:pb-12 f-center flex-col text-center">
-        <Icon name="i-ph-check-circle-duotone" class="h-36 w-36 mx-auto" />
-        <p class="text-xl font-bold mb-4">
-          Your license
-          <span class="text-primary font-bold">{{ state.licenseKey }}</span> has
-          been activated successfully.
-        </p>
-        <p class="text-gray-500">
-          You should have been granted access to our Github repository. If you
-          have any questions, please contact us at <br />
-          <UButton
-            variant="link"
-            :padded="false"
-            color="gray"
-            class="underline"
-            @click="copy('fayaz@supersaas.dev')"
-            >{{
-              copied ? "Copied to clipboard" : "fayaz@supersaas.dev"
-            }}</UButton
+    <UModal
+      v-model="licenseActivated"
+      :ui="{ rounded: 'rounded-2xl overflow-hidden' }"
+    >
+      <div class="p-2 bg-white">
+        <div class="p-8 bg-gray-50 rounded-xl border border-gray-100 space-y-4">
+          <Icon
+            name="i-ph-check-circle-duotone"
+            class="h-20 w-20 mx-auto block text-green-500 my-6"
+          />
+          <p class="text-lg font-bold text-center">
+            License activated successfully
+          </p>
+          <div
+            class="p-2 border border-gray-200 text-center rounded-lg text-gray-600 font-semibold text-sm"
           >
-        </p>
+            {{ state.licenseKey }}
+          </div>
+          <p
+            class="text-gray-500 text-left md:text-center text-xs sm:text-sm flex items-center gap-2"
+          >
+            <UAvatar
+              :src="`https://github.com/${state.username}.png`"
+              size="xs"
+            />
+            {{ state.username }}
+            has been granted access to our Github repository.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 relative mt-1">
+          <UButton
+            variant="ghost"
+            color="gray"
+            block
+            @click="copy('fayaz@supersaas.dev')"
+            class="text-gray-400 font-normal"
+          >
+            {{ copied ? "Copied to clipboard" : "help@supersaas.dev" }}
+          </UButton>
+          <UDivider
+            orientation="vertical"
+            class="absolute left-1/2 -translate-x-1/2 h-5 top-1/2 -translate-y-1/2"
+          />
+          <UButton
+            variant="ghost"
+            color="gray"
+            block
+            to="https://github.com/supersaashq/essentials"
+            target="_blank"
+            class="text-gray-400 font-normal"
+          >
+            Open Github
+          </UButton>
+        </div>
       </div>
     </UModal>
   </div>
 </template>
 
 <script setup>
+import confetti from "canvas-confetti";
 import { useClipboard } from "@vueuse/core";
 import { toast } from "vue-sonner";
 import { z } from "zod";
@@ -78,6 +111,7 @@ const state = reactive({
   username: undefined,
   licenseKey: undefined,
 });
+
 async function onSubmit(event) {
   try {
     loading.value = true;
@@ -86,6 +120,11 @@ async function onSubmit(event) {
       body: event.data,
     });
     licenseActivated.value = true;
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
   } catch (error) {
     toast.error(error.data.message);
   } finally {

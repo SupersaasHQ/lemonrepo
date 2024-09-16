@@ -91,6 +91,7 @@ const navigation = {
     { name: "File Storage", href: "#" },
   ],
   support: [
+    { name: "Activate License", href: "/activate-license" },
     { name: "Discord", href: "#" },
     { name: "Documentation", href: "#" },
     { name: "Email Us", href: "#" },
