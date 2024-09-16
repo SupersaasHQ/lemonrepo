@@ -81,7 +81,7 @@ const state = reactive({
 async function onSubmit(event) {
   try {
     loading.value = true;
-    await $fetch("/api/activate", {
+    await $fetch("/api/activate-license", {
       method: "POST",
       body: event.data,
     });
