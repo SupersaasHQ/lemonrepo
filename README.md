@@ -6,10 +6,42 @@ Lemonrepo is the tech behind I use to sell https://supersaas.dev, a fullstack Nu
 
 ## Features
 
-- A beautiful and simple landing page
-- Admin panel which shows you orders, licenses activated.
-- Enable telegram notifications to receive order notifications.
-- Enable/Disable website promo banner from admin panel.
+- A modern website template to sell your repo
+- Feature sections
+- Show realtime sales
+- A public changelog showing your GitHub commits
+- Testimonials
+- FAQ
+- Lemonsqueezy integration
+- Superfast loading (Scored 100 on speed test)
+- Admin Panel - View orders, Taxes, Refunds, Discounts
+- Customer details
+- License details
+- Telegram notifications
+
+Environment variables
+
+```env
+# Github
+GITHUB_TOKEN=
+GITHUB_OWNER=
+GITHUB_REPO=
+
+# Lemonsqueezy
+LEMONSQUEEZY_API_KEY=
+LEMONSQUEEZY_PRODUCT_URL=
+LEMONSQUEEZY_WEBHOOK_SECRET=
+LEMONSQUEEZY_STORE_ID=
+
+# Admin
+NUXT_SESSION_PASSWORD= A 32 char string
+ADMIN_PASSWORD=
+
+#TELEGRAM
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+```
+
 
 ## Setup
 
