@@ -1,5 +1,5 @@
 import { verifySignature } from "@@/server/utils/verifySignature";
-import { sendTelegramNotification } from "~~/server/utils/telegram";
+import { sendOrderNotification } from "~~/server/utils/telegram";
 
 interface WebhookPayload {
   data: {
@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
     );
     if (telegramNotificationsEnabled) {
       console.log("Sending telegram notification");
-      await sendTelegramNotification({
+      await sendOrderNotification({
         totalAmount: payload.data.attributes.total_formatted,
         customerName: payload.data.attributes.user_name || "Unknown",
         customerEmail: payload.data.attributes.user_email || "Unknown",

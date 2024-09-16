@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { Lemon } from "@@/server/utils/lemon-squeezy";
 import { Github } from "@@/server/utils/github";
+import { sendLicenseActivationNotification } from "~~/server/utils/telegram";
 
 const config = useRuntimeConfig();
 
@@ -31,6 +32,11 @@ export default defineEventHandler(
       licenseKey,
       username
     );
+
+    await sendLicenseActivationNotification({
+      licenseKey,
+      username,
+    });
 
     return {
       activated: true,
