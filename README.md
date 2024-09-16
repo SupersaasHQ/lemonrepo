@@ -4,6 +4,8 @@ Lemonrepo allows you sell access to Private Github repositories using Lemonsquee
 
 Lemonrepo is the tech behind I use to sell https://supersaas.dev, a fullstack Nuxt 3 starter kit
 
+[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://hub.nuxt.com/new?template=lemonrepo)
+
 ## Features
 
 - A modern website template to sell your repo
