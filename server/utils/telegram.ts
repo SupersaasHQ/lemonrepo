@@ -31,7 +31,8 @@ const sendTelegramNotification = async (message: TelegramMessage) => {
   const chatId = useRuntimeConfig().telegramChatId;
 
   if (!token || !chatId) {
-    throw new Error("Telegram bot token or chat ID is not set");
+    console.warn("Telegram bot token or chat ID is not set. Skipping notification.");
+    return;
   }
 
   try {
