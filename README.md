@@ -1,6 +1,6 @@
 # Lemonrepo
 
-Lemonrepo allows you sell access to Private Github repositories using Lemonsqueezy. Everything is automated, license activation to repo read only invite management.
+Lemonrepo allows you sell access to Private GitHub repositories using Lemonsqueezy. Everything is automated, license activation to repo read only invite management.
 
 Lemonrepo is the tech behind I use to sell https://supersaas.dev, a fullstack Nuxt 3 starter kit
 
@@ -24,7 +24,7 @@ Lemonrepo is the tech behind I use to sell https://supersaas.dev, a fullstack Nu
 Environment variables
 
 ```env
-# Github
+# GitHub
 GITHUB_TOKEN=
 GITHUB_OWNER=
 GITHUB_REPO=

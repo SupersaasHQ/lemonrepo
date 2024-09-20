@@ -71,7 +71,7 @@ const testimonials = [
   {
     title: "Features i would buy it for",
     quote:
-      "This is relly well made! especially with features like passkey and hooks for everything. These are the features i would buy it for",
+      "This is really well made! especially with features like passkey and hooks for everything. These are the features i would buy it for",
     author: {
       name: "Rishi Mohan",
       description: "Founder, Pika.Style",

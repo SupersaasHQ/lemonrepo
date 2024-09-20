@@ -120,7 +120,7 @@ const items = [
   "ShadCN Vue Compatible",
   "Zod Validated forms",
   "VueUse Utils",
-  "Hashing Utils compatiable with Edge Functions",
+  "Hashing Utils compatible with Edge Functions",
   "Filters and Text search examples",
 ];
 

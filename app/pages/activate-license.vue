@@ -16,7 +16,7 @@
         :state="state"
         @submit="onSubmit"
       >
-        <UFormGroup label="Github Username" name="username" required size="lg">
+        <UFormGroup label="GitHub Username" name="username" required size="lg">
           <UInput placeholder="Your github username" v-model="state.username" />
         </UFormGroup>
         <UFormGroup label="License Key" name="licenseKey" required size="lg">
@@ -59,7 +59,7 @@
               size="xs"
             />
             {{ state.username }}
-            has been granted access to our Github repository.
+            has been granted access to our GitHub repository.
           </p>
         </div>
         <div class="grid grid-cols-2 relative mt-1">
@@ -84,7 +84,7 @@
             target="_blank"
             class="text-gray-400 font-normal"
           >
-            Open Github
+            Open GitHub
           </UButton>
         </div>
       </div>
