@@ -46,7 +46,7 @@ const items = [
   {
     label: "What does Lifetime access mean?",
     content:
-      "You get access to all the updates and releases that I push to the project. You can also raise issues and feature requests on Github.",
+      "You get access to all the updates and releases that I push to the project. You can also raise issues and feature requests on GitHub.",
   },
   {
     label: "Javascript or Typescript?",
@@ -72,7 +72,7 @@ const items = [
     label:
       "I did not like the product, and I haven't used it. Can I get a refund?",
     content:
-      "I strongly reccomend reaching out to me in case you have doubts about Lemonrepo, I will gladly give you an entire tour of the procuct and how to use it. I can also help you with any questions you have. This way you can decide if you want to purchase the product or not.",
+      "I strongly recommend reaching out to me in case you have doubts about Lemonrepo, I will gladly give you an entire tour of the procuct and how to use it. I can also help you with any questions you have. This way you can decide if you want to purchase the product or not.",
   },
   {
     label: "Can I use Lemonrepo for open source projects?",

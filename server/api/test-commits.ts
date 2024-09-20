@@ -133,7 +133,7 @@ export default [
   },
   {
     sha: "25732eee2a2d2d826c3decdb215ed5a03a0f5c15",
-    message: "fix rmeove comma",
+    message: "fix remove comma",
     author: "Fayaz Ahmed",
     date: "2024-07-20T02:34:57Z",
   },
