@@ -37,9 +37,11 @@ export default defineNuxtConfig({
     session: {
       maxAge: 60 * 60 * 24 * 7,
     },
-    lemonSqueezyApiKey: process.env.LEMONSQUEEZY_API_KEY,
+    LEMONSQUEEZY_API_KEY: process.env.LEMONSQUEEZY_API_KEY,
+    LEMONSQUEEZY_STORE_ID: process.env.LEMONSQUEEZY_STORE_ID,
     lemonSqueezyWebhookSecret: process.env.LEMONSQUEEZY_WEBHOOK_SECRET,
     githubOwner: process.env.GITHUB_OWNER,
+    githubToken: process.env.GITHUB_TOKEN,
     githubRepo: process.env.GITHUB_REPO,
     telegramBotToken: process.env.TELEGRAM_BOT_TOKEN,
     telegramChatId: process.env.TELEGRAM_CHAT_ID,
