@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { Lemon } from "@@/server/utils/lemon-squeezy";
-import { Github } from "@@/server/utils/github";
+import { validateLicenseKey, activateLicenseKey } from "@@/server/utils/lemon-squeezy";
+import { getUser, inviteToRepository } from "@@/server/utils/github";
 import { sendLicenseActivationNotification } from "~~/server/utils/telegram";
 
 const config = useRuntimeConfig();
@@ -12,52 +12,76 @@ const inputSchema = z.object({
 
 export default defineEventHandler(
   async (event): Promise<{ activated: boolean; activationsTotal: number }> => {
-    // Validate input
-    const { licenseKey, username } = await readValidatedBody(
-      event,
-      inputSchema.parse
-    );
+    try {
+      // Validate input
+      const { licenseKey, username } = await readValidatedBody(
+        event,
+        inputSchema.parse
+      );
 
-    // Check license validity and availability
-    await Lemon.validateLicenseKey(licenseKey);
+      // Check license validity and availability
+      await validateLicenseKey(licenseKey);
 
-    // Validate GitHub user
-    await validateGitHubUser(username);
+      // Validate GitHub user
+      await validateGitHubUser(username);
 
-    // Invite user to GitHub repository
-    await inviteToGitHubRepository(username);
+      // Invite user to GitHub repository
+      await inviteToGitHubRepository(username);
 
-    // Activate license
-    const activatedLicenseKey = await Lemon.activateLicenseKey(
-      licenseKey,
-      username
-    );
+      // Activate license
+      const activatedLicenseKey = await activateLicenseKey(
+        licenseKey,
+        username
+      );
 
-    await sendLicenseActivationNotification({
-      licenseKey,
-      username,
-    });
+      await sendLicenseActivationNotification({
+        licenseKey,
+        username,
+      });
 
-    return {
-      activated: true,
-      activationsTotal:
-        activatedLicenseKey.data?.license_key.activation_usage ?? 0,
-    };
+      return {
+        activated: true,
+        activationsTotal:
+          activatedLicenseKey.data?.license_key.activation_usage ?? 0,
+      };
+    } catch (error) {
+      console.error('License activation failed:', error);
+      throw error; // Re-throw to maintain the error response
+    }
   }
 );
 
 async function validateGitHubUser(username: string) {
-  const ghUser = await Github.getUser(username);
-  if (!ghUser || ghUser.type !== "User") {
-    throw createError({ statusCode: 400, message: "GitHub user not found." });
+  try {
+    const ghUser = await getUser(username);
+    if (!ghUser || ghUser.type !== "User") {
+      throw createError({ statusCode: 400, message: "GitHub user not found." });
+    }
+  } catch (error) {
+    console.error('GitHub user validation failed:', error);
+    throw error;
   }
 }
 
 async function inviteToGitHubRepository(username: string) {
-  const invited = await Github.inviteToRepository(
-    config.githubOwner,
-    config.githubRepo,
-    username
-  );
-  console.log(invited);
+  try {
+
+    const invited = await inviteToRepository(
+      config.githubOwner,
+      config.githubRepo,
+      username
+    );
+
+    const invitedToEssentials = await inviteToRepository(
+      config.githubOwner,
+      "essentials-nuxthub",
+      username
+    );
+  } catch (error) {
+    console.error('GitHub repository invitation failed:', error);
+    throw createError({
+      statusCode: 500,
+      message: "Failed to invite user to GitHub repository"
+    });
+  }
 }
