@@ -1,4 +1,4 @@
-import { Lemon } from "@@/server/utils/lemon-squeezy";
+import { getStoreData } from "@@/server/utils/lemon-squeezy";
 
 export default defineEventHandler(async (event) => {
   const { user } = await requireUserSession(event);
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
       message: "You are not authorized to perform this action",
     });
   }
-  const { data } = await Lemon.getStoreData();
+  const { data } = await getStoreData();
   return {
     id: data?.data.id,
     name: data?.data.attributes.name,

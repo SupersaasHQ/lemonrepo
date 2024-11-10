@@ -1,4 +1,4 @@
-import { Lemon } from "@@/server/utils/lemon-squeezy";
+import { getOrders, getLicenseKeys } from "@@/server/utils/lemon-squeezy";
 
 export default defineEventHandler(async (event) => {
   const { user } = await requireUserSession(event);
@@ -8,8 +8,8 @@ export default defineEventHandler(async (event) => {
       message: "You are not authorized to perform this action",
     });
   }
-  const { data } = await Lemon.getOrders();
-  const { data: allLicenseKeys } = await Lemon.getLicenseKeys();
+  const { data } = await getOrders();
+  const { data: allLicenseKeys } = await getLicenseKeys();
   const licenseKeys = allLicenseKeys?.data?.map((licenseKey) => {
     return {
       id: licenseKey.id,
