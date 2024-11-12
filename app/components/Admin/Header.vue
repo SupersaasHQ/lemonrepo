@@ -32,7 +32,10 @@
           class="max-lg:hidden"
           :ui="{ base: 'py-5', active: 'after:bg-black dark:after:bg-white' }"
         />
-        <div aria-hidden="true" class="-ml-4 flex-1" />
+        <div
+          aria-hidden="true"
+          class="-ml-4 flex-1"
+        />
         <div class="flex items-center gap-2">
           <UButton
             icon="i-ph-sign-out-duotone"
@@ -48,11 +51,11 @@
 </template>
 
 <script setup>
-const mobileMenu = ref(false);
+const mobileMenu = ref(false)
 const toggleMobileMenu = () => {
-  document.body.style.overflow = mobileMenu.value ? "auto" : "hidden";
-  mobileMenu.value = !mobileMenu.value;
-};
+  document.body.style.overflow = mobileMenu.value ? "auto" : "hidden"
+  mobileMenu.value = !mobileMenu.value
+}
 
 defineProps({
   storeAvatarUrl: {
@@ -63,7 +66,7 @@ defineProps({
     type: String,
     required: true,
   },
-});
+})
 const menuItems = [
   {
     label: "Orders",
@@ -78,18 +81,24 @@ const menuItems = [
     exactHash: true,
   },
   {
+    label: "Testimonials",
+    to: "/admin/testimonials",
+    exact: true,
+    exactHash: true,
+  },
+  {
     label: "Settings",
     to: "/admin/settings",
     exact: true,
     exactHash: true,
   },
-];
+]
 
-const { clear, fetch: refreshSession } = useUserSession();
+const { clear, fetch: refreshSession } = useUserSession()
 
 const logout = async () => {
-  await clear();
-  await refreshSession();
-  return navigateTo("/");
-};
+  await clear()
+  await refreshSession()
+  return navigateTo("/")
+}
 </script>
