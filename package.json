@@ -18,7 +18,7 @@
     "@nuxt/image": "^1.8.1",
     "@nuxt/scripts": "^0.9.5",
     "@nuxt/ui": "^2.19.2",
-    "@nuxthub/core": "^0.8.6",
+    "@nuxthub/core": "^0.9.0",
     "@octokit/rest": "^21.0.2",
     "apexcharts": "^4.0.0",
     "canvas-confetti": "^1.9.3",
